@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif; /* 设置字体 */
+    max-width: 400px; /* 让内容宽度不超过400像素 */
+    margin: 50px auto; /* 让内容居中 */
+}
+input, button {
+    padding: 10px; /* 让输入框和按钮变大一点 */
+    font-size: 16px;
+}
+ul {
+    list-style: none; /* 去掉列表前面的圆点 */
+    padding: 0;
+}
+li {
+    background-color: #f2f2f2; /* 给每个任务加个灰色背景 */
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer; /* 鼠标放上去变成小手 */
+}
