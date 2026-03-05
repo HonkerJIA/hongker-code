@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的第一个待办清单</title>
+    <title>我的第一个项目</title>
     <!-- 这里把衣服（CSS）穿上去 -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,8 +17,12 @@
         <li>给妈妈打电话</li>
         <li>学习HTML</li>
     </ul>
-
+    <button id="qd">删除所有已完成</button>
+    <button id="sy">所有已完成</button>
+    <button id="sw">所有未完成</button>
+    <div>所有任务数：<span id="totalCount">2</span>   已完成：<span id="completedCount">0</span></div>
     <!-- 注意：这里先不用Vue，我们用最原始的JS，让你彻底搞懂原理 -->
+    <script src="hanshu.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
