@@ -6,7 +6,7 @@ const qd = document.getElementById('qd');
 const sy = document.getElementById('sy');
 const sw = document.getElementById('sw');
 
-
+let tasks = [];
 // 2. 给“添加任务”按钮设置一个监听器，告诉它：”如果有人点你，你就执行后面的函数“
 addBtn.addEventListener('click', function() {
     // 3. 获取用户输入框里的内容
@@ -109,3 +109,6 @@ sw.addEventListener('click',function(){
     });
     gengxin();
 });
+
+loadTasks();
+renderTasks();
