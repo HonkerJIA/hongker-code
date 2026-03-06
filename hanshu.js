@@ -68,3 +68,52 @@ function gengxin() {
     document.getElementById('totalCount').textContent = total;
     document.getElementById('completedCount').textContent = completed;
 }
+
+
+function loadTasks() {
+    const stored = localStorage.getItem('todoTasks');
+    tasks = stored ? JSON.parse(stored) : [
+        { text: '给妈妈打电话', completed: false },
+        { text: '学习JavaScript', completed: false },
+        { text: '写简历', completed: false }
+    ];
+}
+
+// 保存数据
+function saveTasks() {
+    localStorage.setItem('todoTasks', JSON.stringify(tasks));
+}
+
+// 渲染
+function renderTasks() {
+    taskList.innerHTML = '';
+    
+    tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.textContent = task.text;
+        
+        if (task.completed) {
+            li.style.textDecoration = 'line-through';
+            li.style.color = 'gray';
+        }
+        
+        li.addEventListener('click', function() {
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks();
+            renderTasks();
+        });
+        
+        li.addEventListener('dblclick', function() {
+            const newText = prompt('编辑任务', task.text);
+            if (newText && newText.trim() !== '') {
+                tasks[index].text = newText.trim();
+                saveTasks();
+                renderTasks();
+            }
+        });
+        
+        taskList.appendChild(li);
+    });
+    
+    gengxin(); // 你的统计函数
+}
